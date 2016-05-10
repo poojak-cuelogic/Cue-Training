@@ -1,4 +1,4 @@
-console.log("Day 1 Assignments")
+console.log("Day 1 Assignments");
 
 // 1. Creating variables
  var intAge = 21,
