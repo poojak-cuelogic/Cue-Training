@@ -4,41 +4,57 @@ var intA = 20,
 	intB = 10,
 	intC = 15;
 
-function add() {
-	var sum = 0;
+//Function to check the number of argumnets
+function checkArgumentLength(arguments) {
 	if(arguments.length < 2) {
-		return "Error : Minimum 2 arguments required";
+		throw {
+			name: 'TypeError',
+			message: 'Operation requires atleast 2 numbers'
+		};
 	}
+}
+
+//function to check the argument type
+function checkArgumentType(argument) {
+	if(typeof argument != "number") {
+		throw {
+			name: 'TypeError',
+			message: 'Operation requires numbers'
+		};	
+	}
+}
+
+//Add
+function add(arguments) {
+	var sum = 0;
+	checkArgumentLength(arguments);
 	for (var index = 0; index < arguments.length; index++) {
-		if(typeof arguments[index] != "number") {
-			return "Error : Trying to add non integer values";
-		}
+		checkArgumentType(arguments[index]);
 		sum += arguments[index];
 	}
 	return sum;
 }
 
-console.log("Trying to add a single integer");
-var sum = add(intA);
-console.log(sum);
-
-console.log("Trying to add strings");
-var sum = add("intA", "intB");
-console.log(sum);
-
-console.log("Trying to add integers A and B and C");
-var sum = add(intA, intB, intC);
-console.log(sum);
-
-function subtract() {
-	var difference = 0;
-	if(arguments.length < 2) {
-		return "Error : Minimum 2 arguments required";
+var performAddition = function() {
+	var arguments = arguments;
+	try {
+		var sum = add(arguments);
+		console.log(sum);
+	} catch (e) {
+		console.log(e.name + ': ' + e.message);
 	}
+}
+
+performAddition(intA);
+performAddition("intA", "intB");
+performAddition(intA, intB, intC);
+
+//Subtract
+function subtract(arguments) {
+	var difference = 0;
+	checkArgumentLength(arguments);
 	for (var index = 0; index < arguments.length; index++) {
-		if(typeof arguments[index] != "number") {
-			return "Error : Trying to subtract non integer values";
-		}
+		checkArgumentType(arguments[index]);
 		if(arguments[index + 1]) {
 			difference = (difference ? difference : arguments[index]) - arguments[index + 1];
 		}
@@ -46,44 +62,46 @@ function subtract() {
 	return difference;
 }
 
-console.log("Trying to subtract a single integer");
-var difference = subtract(intA);
-console.log(difference);
-
-console.log("Trying to subtract strings");
-var difference = subtract("intA", "intB");
-console.log(difference);
-
-console.log("Trying to subtract integers A and B and C");
-var difference = subtract(intA, intB, intC);
-console.log(difference);
-
-function multiply() {
-	var product = 1;
-	if(arguments.length < 2) {
-		return "Error : Minimum 2 arguments required";
+var performSubtraction = function() {
+	var arguments = arguments;
+	try {
+		var difference = subtract(arguments);
+		console.log(difference);
+	} catch (e) {
+		console.log(e.name + ': ' + e.message);
 	}
+}
+
+performSubtraction(intA);
+performSubtraction("intA", "intB");
+performSubtraction(intA, intB, intC);
+
+//Multiply
+function multiply(arguments) {
+	var product = 1;
+	checkArgumentLength(arguments);
 	for (var index = 0; index < arguments.length; index++) {
-		if(typeof arguments[index] != "number") {
-			return "Error : Trying to multiply non integer values";
-		}
+		checkArgumentType(arguments[index]);
 		product *= arguments[index];
 	}
 	return product;
 }
 
-console.log("Trying to multiply a single integer");
-var product = multiply(intA);
-console.log(product);
+var performMultiplication = function() {
+	var arguments = arguments;
+	try {
+		var product = multiply(arguments);
+		console.log(product);
+	} catch (e) {
+		console.log(e.name + ': ' + e.message);
+	}
+}
 
-console.log("Trying to multiply strings");
-var product = multiply("intA", "intB");
-console.log(product);
+performMultiplication(intA);
+performMultiplication("intA", "intB");
+performMultiplication(intA, intB, intC);
 
-console.log("Trying to multiply integers A and B and C");
-var product = multiply(intA, intB, intC);
-console.log(product);
-
+//Divide
 function divide(x, y) {
 	var quotient = 1;
 	if(typeof x != "number" || typeof y != "number") {
@@ -92,20 +110,17 @@ function divide(x, y) {
 	return x/y;
 }
 
-console.log("Divide integers A and B");
 var quotient = divide(intA, intB);
-console.log(quotient);
+console.log(intA +'/' + intB +' = ' + quotient);
 
+//Using objects
 var Student = function(name) {
 	this.name = name;
 	this.age = 0;
 }
 
 var Alice = new Student('Alice');
-console.log(Alice);
-
 var John = new Student('John');
-console.log(John);
 
 Student.prototype.greet = function() {
 	console.log("Hello, I am "+this.name);
@@ -122,6 +137,7 @@ console.log("Using class as a member vairable name");
 var Peter = new Student('Peter');
 console.log(Peter.class);
 
+//Using different loops
 function loopUsingFor(n) {
 	console.log("Loop using For")
 	for (var index = 1; index <= n; index++) {
