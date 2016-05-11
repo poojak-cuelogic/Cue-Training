@@ -122,11 +122,12 @@ var Student = function(name) {
 var Alice = new Student('Alice');
 var John = new Student('John');
 
-Student.prototype.greet = function() {
-	console.log("Hello, I am "+this.name);
+//Day 3 - printName
+Student.prototype.printName = function() {
+	console.log("Hello, I am "+ this.name);
 }
-Alice.greet();
-John.greet();
+Alice.printName();
+John.printName();
 
 var Student = function(name) {
 	this.name = name;
