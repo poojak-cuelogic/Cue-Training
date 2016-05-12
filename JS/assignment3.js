@@ -1,4 +1,5 @@
 console.log("Day 3 Assignments");
+console.log("\n");
 
 //1. Factorial
 var factorial = function factorial(i, a) {
@@ -9,6 +10,7 @@ var factorial = function factorial(i, a) {
 	return factorial(i-1, a*i);
 };
 console.log('Factorial of 5 = '+ factorial(5));
+console.log("\n");
 
 //3. String Search
 function stringSearch(haystack, needle) {
@@ -20,6 +22,7 @@ function stringSearch(haystack, needle) {
 }
 console.log(stringSearch('I am Amelia from Amsterdam.', 'am'));
 console.log(stringSearch('I am Amelia from Amsterdam.', 'de'));
+console.log("\n");
 
 //4. Write a function that will accept a unix timeStamp and covert to its UTC equivalent value
 function covertUnixToUTC(unixTimestamp) {
@@ -27,6 +30,7 @@ function covertUnixToUTC(unixTimestamp) {
 	console.log(date);
 }
 covertUnixToUTC(1462924800);
+console.log("\n");
 
 //5. Convert 1D array into 2D array
 function covert1DArrayTo2DArray(arrInput) {
@@ -39,8 +43,11 @@ function covert1DArrayTo2DArray(arrInput) {
 }
 var arrInput = ['00','01','11','10','11','00','10','11'];
 console.log(covert1DArrayTo2DArray(arrInput));
+console.log("\n");
 
 //Print elements of an array without looping
-var result = Array(101).fill(0).map(function(value, index) { return index; })
+var result = Array(11).fill(0).map(function(value, index) { return index; })
 result.shift();
 console.log(result.join("\n"));
+console.log("\n");
+console.log("\n");

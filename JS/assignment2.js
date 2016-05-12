@@ -1,4 +1,6 @@
 console.log("Day 2 Assignments");
+console.log("\n");
+
 console.log('A = 20, B = 10, C = 15');
 var intA = 20,
 	intB = 10,
@@ -48,6 +50,7 @@ var performAddition = function() {
 performAddition(intA);
 performAddition("intA", "intB");
 performAddition(intA, intB, intC);
+console.log("\n");
 
 //Subtract
 function subtract(arguments) {
@@ -75,6 +78,7 @@ var performSubtraction = function() {
 performSubtraction(intA);
 performSubtraction("intA", "intB");
 performSubtraction(intA, intB, intC);
+console.log("\n");
 
 //Multiply
 function multiply(arguments) {
@@ -100,6 +104,7 @@ var performMultiplication = function() {
 performMultiplication(intA);
 performMultiplication("intA", "intB");
 performMultiplication(intA, intB, intC);
+console.log("\n");
 
 //Divide
 function divide(x, y) {
@@ -112,6 +117,7 @@ function divide(x, y) {
 
 var quotient = divide(intA, intB);
 console.log(intA +'/' + intB +' = ' + quotient);
+console.log("\n");
 
 //Using objects
 var Student = function(name) {
@@ -128,6 +134,7 @@ Student.prototype.printName = function() {
 }
 Alice.printName();
 John.printName();
+console.log("\n");
 
 var Student = function(name) {
 	this.name = name;
@@ -137,6 +144,7 @@ var Student = function(name) {
 console.log("Using class as a member vairable name");
 var Peter = new Student('Peter');
 console.log(Peter.class);
+console.log("\n");
 
 //Using different loops
 function loopUsingFor(n) {
@@ -145,7 +153,8 @@ function loopUsingFor(n) {
 		console.log(index);
 	}
 }
-loopUsingFor(10);
+loopUsingFor(3);
+console.log("\n");
 
 function loopUsingWhile(n) {
 	console.log("Loop using While")
@@ -155,7 +164,8 @@ function loopUsingWhile(n) {
 		index++;
 	}
 }
-loopUsingWhile(10);
+loopUsingWhile(3);
+console.log("\n");
 
 function loopUsingDoWhile(n) {
 	console.log("Loop using Do While")
@@ -165,4 +175,6 @@ function loopUsingDoWhile(n) {
 		index++;
 	} while(index <= n);
 }
-loopUsingDoWhile(10);
+loopUsingDoWhile(3);
+console.log("\n");
+console.log("\n");
